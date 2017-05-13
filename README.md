@@ -1,4 +1,4 @@
-# DynamoDB Testing Snapshot
+# DynamoDB-Snapshot-Containers
 
 Functional testing a stateful system because your tests typically mutate the state of the system under test. This leads to all sorts of "dirty state" problems where tests fail because the system under test was not started from a known state. The matter is made much worse when your software leverages managed services or proprietary database technology like DynamoDB. I love DynamoDB, but introducing a network dependency on development environments and functional tests is a bad idea. AWS released a [local DynamoDB devkit](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html) sometime ago. This project both wraps that [DynamoDB devkit in a container](https://hub.docker.com/buildertools/dynamodb-local) and provides a mechanism for capturing snapshots that can be attached to dependent services at test time to launch from well known states.
 
