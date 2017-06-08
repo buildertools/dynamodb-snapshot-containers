@@ -4,19 +4,19 @@ helpText () {
   echo "build-snap.sh SCRIPT_FILENAME OUTPUT_REPOSITORY [AUTHOR] {MESSAGE}"
 }
 
-if [ "$#" -lt 2 ] 
+if [ "$#" -lt 2 ]
 then
-	helpText
-	exit 1
-fi 
-
-if [ "$#" -gt 4 ] 
-then 
 	helpText
 	exit 1
 fi
 
-if [ -f $1 ] 
+if [ "$#" -gt 4 ]
+then
+	helpText
+	exit 1
+fi
+
+if [ ! -f $1 ]
 then
 	echo No such input script
 	exit 1
